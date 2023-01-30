@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
+import Link from "next/link";
 export default function pokemon() {
   return (
     <div className="">
@@ -35,19 +36,19 @@ export default function pokemon() {
                   className={`absolute top-1 right-1 bottom-1 left-1 rounded-md bg-white grid grid-cols-2 gap-4 p-4 ${styles.pokemonDetails1}`}
                 >
                   <div>
-                    <h3 className="text-xl font-semibold my-2">Height</h3>
+                    <h3 className="text-2xl  my-2">Height</h3>
                     <p className="my-2">343</p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold my-2">Category</h3>
+                    <h3 className="text-2xl my-2">Category</h3>
                     <p className="my-2">343</p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold my-2">Weight</h3>
+                    <h3 className="text-2xl  my-2">Weight</h3>
                     <p className="my-2">343</p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold my-2">Abilities</h3>
+                    <h3 className="text-2xl  my-2">Abilities</h3>
                     <p className="my-2">343</p>
                   </div>
                 </div>
@@ -105,7 +106,10 @@ export default function pokemon() {
               </div>
             </div>
           </div>
-          <button className="text-center flex bg-yellow-500  border-2 border-blue-600 text-slate-50 px-4 py-2 rounded text-xl duration-300 ease-in hover:bg-yellow-400">
+          <Link
+            href={"/"}
+            className="text-center flex bg-yellow-500  border-2 border-blue-600 text-slate-50 px-4 py-2 rounded text-xl duration-300 ease-in hover:bg-yellow-400"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -116,7 +120,7 @@ export default function pokemon() {
               <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
             </svg>
             Back to Home
-          </button>
+          </Link>
         </div>
       </div>
     </div>
