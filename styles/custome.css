@@ -1,0 +1,5 @@
+.pokemonContainer{
+    background: url('../public/Media\ Asset/background.png');
+    background-position: center;
+    background-size: cover;
+  }
