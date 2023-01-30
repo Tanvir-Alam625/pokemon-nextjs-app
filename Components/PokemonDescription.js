@@ -39,6 +39,7 @@ const PokemonDescription = () => {
                     src={"/Media Asset/Image04.png"}
                     height={200}
                     width={200}
+					alt="pokemon-logo"
                   />
                 </div>
                 <p className="text-justify ">
@@ -55,11 +56,13 @@ const PokemonDescription = () => {
                   src={"/Media Asset/Image04.png"}
                   height={200}
                   width={200}
+				  alt="pokemon-logo"
                 />
                 <Image
                   src={"/Media Asset/Image04.png"}
                   height={200}
                   width={200}
+				  alt="pokemon-logo"
                 />
               </div>
             </div>
@@ -105,6 +108,7 @@ const PokemonDescription = () => {
                   src={"/Media Asset/Image05.png"}
                   height={200}
                   width={200}
+				  alt="pokemon-logo"
                 />
               </div>
               <div className="w-[70%] mb-2">
@@ -129,6 +133,7 @@ const PokemonDescription = () => {
                   src={"/Media Asset/Image01.png"}
                   height={200}
                   width={200}
+				  alt="pokemon-logo"
                 />
               </div>
               <div className="w-[70%]">
