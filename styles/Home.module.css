@@ -27,3 +27,14 @@
 .pokemon:hover .title{
   color: white;
 }
+.pokemonDescription{
+  background: url('../public/Media\ Asset/Left.png');
+  background-repeat: round;
+}
+
+.pokemonTitle{
+  background: url('../public/Media\ Asset/Brush.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40%;
+}
