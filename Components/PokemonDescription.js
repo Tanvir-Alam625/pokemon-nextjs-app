@@ -1,39 +1,7 @@
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
-import { useEffect } from "react";
-const gqlQuery = `query pokemons($limit: Int, $offset: Int) {
-  pokemons(limit: $limit, offset: $offset) {
-    count
-    next
-    previous
-    status
-    message
-    results {
-      url
-      name
-      image
-      abilities
-    }
-  }
-}`;
-const gqlVariables = {
-  limit: 10,
-  offset: 1,
-};
+
 const PokemonDescription = () => {
-  // useEffect(() => {
-  //   fetch("https://graphql-pokeapi.graphcdn.app/", {
-  //     credentials: "omit",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({
-  //       query: gqlQuery,
-  //       variables: gqlVariables,
-  //     }),
-  //     method: "POST",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((res) => console.log("Response from server", res));
-  // }, []);
   return (
     <div className={`bg-white p-0 m-0  ${styles.pokemonDescription}`}>
       <div className=" max-w-7xl mx-auto py-12 bg-white">
@@ -86,13 +54,13 @@ const PokemonDescription = () => {
               <div className="w-[30%] mb-2">
                 <Image
                   className="mb-2"
-                  src={"/Media Asset/Image04.png"}
+                  src={"/MediaAsset/Image04.png"}
                   height={200}
                   width={200}
                   alt="pokemon-logo"
                 />
                 <Image
-                  src={"/Media Asset/Image04.png"}
+                  src={"/MediaAsset/Image04.png"}
                   height={200}
                   width={200}
                   alt="pokemon-logo"
@@ -138,7 +106,7 @@ const PokemonDescription = () => {
             <div className="flex">
               <div className="w-[30%] mr-2 mb-2">
                 <Image
-                  src={"/Media Asset/Image05.png"}
+                  src={"/MediaAsset/Image05.png"}
                   height={200}
                   width={200}
                   alt="pokemon-logo"
@@ -162,7 +130,7 @@ const PokemonDescription = () => {
             <div className="flex">
               <div className="w-[30%] mr-2 mb-2">
                 <Image
-                  src={"/Media Asset/Image01.png"}
+                  src={"/MediaAsset/Image01.png"}
                   height={200}
                   width={200}
                   alt="pokemon-logo"

@@ -1,5 +1,5 @@
 .pokemonContainer{
-  background: url('../public/Media\ Asset/background.png');
+  background: url('../public/MediaAsset/background.png');
   background-position: center;
   background-size: cover;
 }
@@ -39,12 +39,12 @@
   color: white;
 }
 .pokemonDescription{
-  background: url('../public/Media\ Asset/Left.png');
+  background: url('../public/MediaAsset/Left.png');
   background-repeat: round;
 }
 
 .pokemonTitle{
-  background: url('../public/Media\ Asset/Brush.png');
+  background: url('../public/MediaAsset/Brush.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 40%;

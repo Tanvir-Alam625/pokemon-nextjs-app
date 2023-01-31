@@ -45,7 +45,7 @@ export default function Home({data}) {
         <div className={`w-full py-6 min-h-screen ${styles.pokemonContainer}`}>
           <div className="logo flex justify-center  py-10">
             <Image
-              src={"/Media Asset/Logo.png"}
+              src={"/MediaAsset/Logo.png"}
               width={200}
               height={100}
               alt="pokemon-logo"

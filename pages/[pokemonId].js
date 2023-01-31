@@ -14,7 +14,7 @@ export default function pokemon() {
         <div className="max-w-7xl mx-auto min-h-full  flex flex-col items-center  bg-white ">
           <div className="flex justify-center py-20">
             <Image
-              src={"/Media Asset/Logo.png"}
+              src={"/MediaAsset/Logo.png"}
               width={200}
               height={100}
               alt="pokemon-logo"
@@ -58,7 +58,7 @@ export default function pokemon() {
             <div className=" w-full lg:w-[33%] flex justify-center items-center lg:order-2 order-1">
               <Image
                 className=" scale-[0.9] duration-700 ease-in-out hover:scale-[1] shadow-2xl"
-                src={"/Media Asset/Image04.png"}
+                src={"/MediaAsset/Image04.png"}
                 width={200}
                 height={100}
                 alt="pokemon-logo"
