@@ -11,7 +11,9 @@ import 'react-multi-carousel/lib/styles.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({data}) {
+
+// for responsive carousel 
 
   const responsive = {
         superLargeDesktop: {
@@ -49,31 +51,23 @@ export default function Home() {
               alt="pokemon-logo"
             />
           </div>
-          <div className="container relative">
+          <div className="container relative flex flex-col items-center">
             {/* for small device  */}
-            <div  className="block lg:hidden">
+            <div  className="block md:block lg:hidden ">
               <Carousel className="block lg:hidden " 
               draggable={true}
               keyBoardControl={true}
               itemClass={styles.carouselItem}
               responsive={responsive}>
-                <Pokemon />
-                <Pokemon />
-                <Pokemon />
-                <Pokemon />
-                <Pokemon />
-                <Pokemon />
-                <Pokemon />
+                {
+                  data && data.map( (pokemon, index) => <Pokemon key={index} index={index} pokemon={pokemon} />)
+                }
               </Carousel>
             </div>
-            <div   className={`  hidden   lg:grid lg:grid-cols-5 lg:gap-10  max-w-7xl my-0 mx-auto ${styles.pokemons}`}>
-              <Pokemon />
-              <Pokemon />
-              <Pokemon />
-              <Pokemon />
-              <Pokemon />
-              <Pokemon />
-              <Pokemon />
+          <div className={`hidden md:grid lg:grid lg:grid-cols-5 lg:gap-10  max-w-7xl my-0 ${styles.pokemons}`}>
+                {
+                  data && data.map( (pokemon, index) => <Pokemon key={index} index={index} pokemon={pokemon} />)
+                }
             </div>
           </div>
         </div>
@@ -81,4 +75,44 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+// query graphql 
+const gqlQuery = `query pokemons($limit: Int, $offset: Int) {
+  pokemons(limit: $limit, offset: $offset) {
+    count
+    next
+    previous
+    status
+    message
+    results {
+      url
+      name
+      image
+    }
+  }
+}`;
+// graphql variables 
+const gqlVariables = {
+  limit: 10,
+  offset: 1,
+};
+
+export const getStaticProps = async () => {
+  const res = await fetch("https://graphql-pokeapi.graphcdn.app/", {
+    credentials: "omit",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      query: gqlQuery,
+      variables: gqlVariables,
+    }),
+    method: "POST",
+  });
+  const data = await res.json();
+
+  return{
+    props:{
+      data: data?.data?.pokemons?.results
+    }
+  }
 }

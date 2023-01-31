@@ -26,10 +26,10 @@
 }
 .logo{
   transition: 400ms ease-in;
-  transform: scale(0.9);
+  transform: scale(1);
 }
 .pokemon:hover .logo{
-  transform: scale(1.1);
+  transform: scale(1.4);
 }
 
 .title{
