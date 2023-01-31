@@ -3,6 +3,15 @@
   background-position: center;
   background-size: cover;
 }
+.pokemons{
+   transition: transform 300ms ease;
+
+}
+
+.carouselItem{
+  margin: 0 10px;
+  min-width: 200px;
+}
 .pokemon,
 .pokemonDetails,
 .pokemonDetails1{

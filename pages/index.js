@@ -4,10 +4,33 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Pokemon from "@/Components/Pokemon";
 import PokemonDescription from "@/Components/PokemonDescription";
+import { useRef,useState } from "react";
+import pokemon from "./[pokemonId]";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+
+  const responsive = {
+        superLargeDesktop: {
+          breakpoint: { max: 4000, min: 3000 },
+          items: 5
+        },
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 3
+        },
+        tablet: {
+          breakpoint: { max: 300, min: 250 },
+          items: 2
+        },
+        mobile: {
+          breakpoint: { max: 250, min: 200 },
+          items: 1
+        }
+      };
   return (
     <>
       <Head>
@@ -26,14 +49,32 @@ export default function Home() {
               alt="pokemon-logo"
             />
           </div>
-          <div className="grid grid-cols-5 gap-10  max-w-7xl my-0 mx-auto">
-            <Pokemon />
-            <Pokemon />
-            <Pokemon />
-            <Pokemon />
-            <Pokemon />
-            <Pokemon />
-            <Pokemon />
+          <div className="container relative">
+            {/* for small device  */}
+            <div  className="block lg:hidden">
+              <Carousel className="block lg:hidden " 
+              draggable={true}
+              keyBoardControl={true}
+              itemClass={styles.carouselItem}
+              responsive={responsive}>
+                <Pokemon />
+                <Pokemon />
+                <Pokemon />
+                <Pokemon />
+                <Pokemon />
+                <Pokemon />
+                <Pokemon />
+              </Carousel>
+            </div>
+            <div   className={`  hidden   lg:grid lg:grid-cols-5 lg:gap-10  max-w-7xl my-0 mx-auto ${styles.pokemons}`}>
+              <Pokemon />
+              <Pokemon />
+              <Pokemon />
+              <Pokemon />
+              <Pokemon />
+              <Pokemon />
+              <Pokemon />
+            </div>
           </div>
         </div>
         <PokemonDescription />
